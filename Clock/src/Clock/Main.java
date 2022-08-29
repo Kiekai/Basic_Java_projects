@@ -3,7 +3,7 @@ package Clock;
 public class Main {
 	public static void main(String[] args)
 	{
-		MyCLock clock = new MyCLock();
+		new MyCLock();
 	}
 
 }

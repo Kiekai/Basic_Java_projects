@@ -1,5 +1,4 @@
 package Clock;
-import javax.swing.JFrame;
 import java.util.*;
 import java.awt.*;
 import java.text.*;
@@ -7,6 +6,10 @@ import javax.swing.*;
 
 public class MyCLock extends JFrame
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Calendar calendar;
 	SimpleDateFormat timeFormat; 
 	SimpleDateFormat DayFormat; 
