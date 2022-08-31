@@ -18,7 +18,7 @@ public class TextEditor extends JFrame implements ActionListener
 	JScrollPane scroll;
 	JSpinner spinner;
 	JLabel label;
-	JButton ColorB;
+	JButton ColorB, BackGroundB;
 	JComboBox box;
 	
 	JMenuBar menu;
@@ -35,6 +35,7 @@ public class TextEditor extends JFrame implements ActionListener
 		this.setLayout(new FlowLayout());
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
+		
 		
 		text = new JTextArea();
 		text.setLineWrap(true);
@@ -68,6 +69,9 @@ public class TextEditor extends JFrame implements ActionListener
 		box.addActionListener(this);
 		box.setSelectedItem("Arial");
 		
+		BackGroundB = new JButton("BackGround");
+		BackGroundB.addActionListener(this);
+		
 		// MENU BAR
 		
 		menu = new JMenuBar();
@@ -90,6 +94,7 @@ public class TextEditor extends JFrame implements ActionListener
 		this.setJMenuBar(menu);
 		this.add(label);
 		this.add(spinner);
+		this.add(BackGroundB);
 		this.add(ColorB);
 		this.add(box);
 		this.add(scroll);
@@ -106,6 +111,13 @@ public class TextEditor extends JFrame implements ActionListener
 			Color color = colorChooser.showDialog(null, "Choose a color", Color.BLACK);
 			text.setForeground(color);
 			
+		}
+		
+		if(action.getSource() == BackGroundB)
+		{
+			JColorChooser background = new JColorChooser();
+			Color color = background.showDialog(null, "Choose background color", Color.BLACK);
+			text.setBackground(color);
 		}
 		
 		if(action.getSource() == box)
